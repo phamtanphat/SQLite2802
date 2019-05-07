@@ -18,5 +18,7 @@ public class MainActivity extends AppCompatActivity {
 //        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER AUTO_INCREMENT PRIMARY KEY , Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
 //        sqLite.Querydata(createtable);
         //Them du lieu vao trong bang
+//        String insertdata = "INSERT INTO Monan VALUES (null,'Bánh canh','Quận 3',30000)";
+//        sqLite.Querydata(insertdata);
     }
 }
