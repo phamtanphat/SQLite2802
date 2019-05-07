@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Tao database
-//        sqLite = new SQLite(this,"Quanlymonan.sql", null , 1);
-        //
+        sqLite = new SQLite(this,"Quanlymonan.sql", null , 1);
+        // Tao bang
+        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER AUTO_INCREMENT PRIMARY KEY , Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
     }
 }
