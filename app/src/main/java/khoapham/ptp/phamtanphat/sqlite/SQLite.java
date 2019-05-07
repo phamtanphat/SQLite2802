@@ -20,7 +20,7 @@ public class SQLite extends SQLiteOpenHelper {
     //Phuong thuc thuc thi cau truy van tra ve ket qua(lay du lieu tu database)
     public Cursor Getdata(String sql){
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        return  sqLiteDatabase.rawQuery(sql,null);
+        return sqLiteDatabase.rawQuery(sql,null);
     }
 
 
