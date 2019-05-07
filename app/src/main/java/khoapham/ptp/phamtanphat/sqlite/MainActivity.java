@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
         // Tao database
         sqLite = new SQLite(this,"Quanlymonan.sql", null , 1);
         // Tao bang
-        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER AUTO_INCREMENT PRIMARY KEY , Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
+        //Cau truc du lieu
+//        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER AUTO_INCREMENT PRIMARY KEY , Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
+//        sqLite.Querydata(createtable);
+        //Them du lieu vao trong bang
     }
 }
