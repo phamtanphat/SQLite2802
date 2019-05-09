@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MonanAdapter extends ArrayAdapter<MonanAdapter> {
+public class MonanAdapter extends ArrayAdapter<Monan> {
 
-    public MonanAdapter(@NonNull Context context,@NonNull List<MonanAdapter> objects) {
+    public MonanAdapter(@NonNull Context context,@NonNull List<Monan> objects) {
         super(context, R.layout.dong_item_monan, objects);
     }
 
@@ -28,6 +28,11 @@ public class MonanAdapter extends ArrayAdapter<MonanAdapter> {
         TextView txtdiachi = convertView.findViewById(R.id.textviewDiachi);
         TextView txtgia = convertView.findViewById(R.id.textviewGia);
 
+        Monan monan = getItem(position);
+
+        txtten.setText(monan.getTen());
+        txtdiachi.setText(monan.getDiachi());
+        txtgia.setText(monan.getGia() + " Đồng");
         return convertView;
     }
 }
