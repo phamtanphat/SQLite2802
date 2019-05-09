@@ -4,10 +4,12 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
     SQLite sqLite;
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Tao database
         sqLite = new SQLite(this,"Quanlymonan.sql", null , 1);
+        listView = findViewById(R.id.listview);
         // Tao bang
         //Cau truc du lieu
 //        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER AUTO_INCREMENT PRIMARY KEY , Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
@@ -30,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             String diachia = cursor.getString(2);
             int gia = cursor.getInt(3);
 
-            Log.d("BBB", ten);
         }
     }
 }
