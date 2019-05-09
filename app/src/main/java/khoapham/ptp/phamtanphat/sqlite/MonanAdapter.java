@@ -12,12 +12,11 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class MonanAdapter extends ArrayAdapter<Monan> {
+public class MonanAdapter extends ArrayAdapter<Monan>{
 
     public MonanAdapter(@NonNull Context context,@NonNull List<Monan> objects) {
         super(context, R.layout.dong_item_monan, objects);
     }
-
 
     @NonNull
     @Override
@@ -39,8 +38,13 @@ public class MonanAdapter extends ArrayAdapter<Monan> {
             @Override
             public void onClick(View v) {
                 String delete = "DELETE FROM Monan WHERE Id = '"+monan.getId()+"'";
+                MainActivity.sqLite.Querydata(delete);
+                remove(monan);
+                notifyDataSetChanged();
             }
         });
         return convertView;
     }
+
+
 }

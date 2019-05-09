@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    SQLite sqLite;
+    static SQLite sqLite;
     ListView listView;
     MonanAdapter monanAdapter;
     ArrayList<Monan> mangmonan = new ArrayList<>();
@@ -23,16 +23,22 @@ public class MainActivity extends AppCompatActivity {
 
         // Tao database
         sqLite = new SQLite(this,"Quanlymonan.sql", null , 1);
+
         listView = findViewById(R.id.listview);
         monanAdapter = new MonanAdapter(this,mangmonan);
+
         listView.setAdapter(monanAdapter);
         // Tao bang
         //Cau truc du lieu
-//        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER AUTO_INCREMENT PRIMARY KEY , Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
-//        sqLite.Querydata(createtable);
+        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER PRIMARY KEY AUTOINCREMENT, Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
+        sqLite.Querydata(createtable);
         //Them du lieu vao trong bang
-//        String insertdata = "INSERT INTO Monan VALUES (null,'Bánh canh','Quận 3',30000)";
-//        sqLite.Querydata(insertdata);
+        String insertdata = "INSERT INTO Monan VALUES (null,'Bánh bao','Quận 4',25000)";
+        String insertdata1 = "INSERT INTO Monan VALUES (null,'Chả cá','Quận 5',40000)";
+        String insertdata2 = "INSERT INTO Monan VALUES (null,'Chả tôm','Quận 6',35000)";
+        sqLite.Querydata(insertdata);
+        sqLite.Querydata(insertdata2);
+        sqLite.Querydata(insertdata1);
         selectDatabase();
 
     }
@@ -44,8 +50,10 @@ public class MainActivity extends AppCompatActivity {
             String ten = cursor.getString(1);
             String diachia = cursor.getString(2);
             int gia = cursor.getInt(3);
+            Log.d("BBB",id + "");
             mangmonan.add(new Monan(id , ten ,diachia, gia));
         }
         monanAdapter.notifyDataSetChanged();
+
     }
 }
