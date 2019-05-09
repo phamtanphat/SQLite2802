@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,11 +29,18 @@ public class MonanAdapter extends ArrayAdapter<Monan> {
         TextView txtdiachi = convertView.findViewById(R.id.textviewDiachi);
         TextView txtgia = convertView.findViewById(R.id.textviewGia);
 
-        Monan monan = getItem(position);
+        final Monan monan = getItem(position);
 
         txtten.setText(monan.getTen());
         txtdiachi.setText(monan.getDiachi());
         txtgia.setText(monan.getGia() + " Đồng");
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String delete = "DELETE FROM Monan WHERE Id = '"+monan.getId()+"'";
+            }
+        });
         return convertView;
     }
 }
