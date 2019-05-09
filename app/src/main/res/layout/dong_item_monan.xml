@@ -18,13 +18,13 @@
         android:layout_margin="5dp"
         android:textColor="#2053d4"
         android:textSize="25sp"
-        android:id="@+id/textviewNamsinh"
+        android:id="@+id/textviewGia"
         android:text="Giá món ăn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
         android:layout_alignParentRight="true"
-        android:layout_alignBaseline="@id/textviewNamsinh"
+        android:layout_alignBaseline="@id/textviewTen"
         android:textStyle="italic"
         android:layout_margin="5dp"
         android:textColor="#2dba7f"
