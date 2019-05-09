@@ -30,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(monanAdapter);
         // Tao bang
         //Cau truc du lieu
-        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER PRIMARY KEY AUTOINCREMENT, Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
-        sqLite.Querydata(createtable);
+//        String createtable = "CREATE TABLE IF NOT EXISTS Monan(Id INTEGER PRIMARY KEY AUTOINCREMENT, Tenmonan VARCHAR , Diachi VARCHAR , Gia INTEGER)";
+//        sqLite.Querydata(createtable);
         //Them du lieu vao trong bang
-        String insertdata = "INSERT INTO Monan VALUES (null,'Bánh bao','Quận 4',25000)";
-        String insertdata1 = "INSERT INTO Monan VALUES (null,'Chả cá','Quận 5',40000)";
-        String insertdata2 = "INSERT INTO Monan VALUES (null,'Chả tôm','Quận 6',35000)";
-        sqLite.Querydata(insertdata);
-        sqLite.Querydata(insertdata2);
-        sqLite.Querydata(insertdata1);
+//        String insertdata = "INSERT INTO Monan VALUES (null,'Bánh bao','Quận 4',25000)";
+//        String insertdata1 = "INSERT INTO Monan VALUES (null,'Chả cá','Quận 5',40000)";
+//        String insertdata2 = "INSERT INTO Monan VALUES (null,'Chả tôm','Quận 6',35000)";
+//        sqLite.Querydata(insertdata);
+//        sqLite.Querydata(insertdata2);
+//        sqLite.Querydata(insertdata1);
         selectDatabase();
 
     }
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             String ten = cursor.getString(1);
             String diachia = cursor.getString(2);
             int gia = cursor.getInt(3);
-            Log.d("BBB",id + "");
             mangmonan.add(new Monan(id , ten ,diachia, gia));
         }
         monanAdapter.notifyDataSetChanged();

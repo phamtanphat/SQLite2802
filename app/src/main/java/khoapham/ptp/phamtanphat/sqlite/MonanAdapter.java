@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.List;
 
 public class MonanAdapter extends ArrayAdapter<Monan>{
-
+    Monan monan;
     public MonanAdapter(@NonNull Context context,@NonNull List<Monan> objects) {
         super(context, R.layout.dong_item_monan, objects);
     }
@@ -28,7 +28,7 @@ public class MonanAdapter extends ArrayAdapter<Monan>{
         TextView txtdiachi = convertView.findViewById(R.id.textviewDiachi);
         TextView txtgia = convertView.findViewById(R.id.textviewGia);
 
-        final Monan monan = getItem(position);
+        monan = getItem(position);
 
         txtten.setText(monan.getTen());
         txtdiachi.setText(monan.getDiachi());
@@ -45,6 +45,5 @@ public class MonanAdapter extends ArrayAdapter<Monan>{
         });
         return convertView;
     }
-
 
 }
