@@ -3,6 +3,7 @@ package khoapham.ptp.phamtanphat.sqlite;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 import java.util.List;
 
 public class MonanAdapter extends ArrayAdapter<Monan>{
-    Monan monan;
+
     public MonanAdapter(@NonNull Context context,@NonNull List<Monan> objects) {
         super(context, R.layout.dong_item_monan, objects);
     }
@@ -28,7 +29,7 @@ public class MonanAdapter extends ArrayAdapter<Monan>{
         TextView txtdiachi = convertView.findViewById(R.id.textviewDiachi);
         TextView txtgia = convertView.findViewById(R.id.textviewGia);
 
-        monan = getItem(position);
+        final Monan monan = getItem(position);
 
         txtten.setText(monan.getTen());
         txtdiachi.setText(monan.getDiachi());
@@ -37,6 +38,7 @@ public class MonanAdapter extends ArrayAdapter<Monan>{
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("BBB",monan.getId() + "");
                 String delete = "DELETE FROM Monan WHERE Id = '"+monan.getId()+"'";
                 MainActivity.sqLite.Querydata(delete);
                 remove(monan);

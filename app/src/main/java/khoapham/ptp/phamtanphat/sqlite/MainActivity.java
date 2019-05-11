@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void selectDatabase(){
+        mangmonan.clear();
         String getAlldata = "SELECT * FROM Monan";
         Cursor cursor = sqLite.Getdata(getAlldata);
         while (cursor.moveToNext()){
