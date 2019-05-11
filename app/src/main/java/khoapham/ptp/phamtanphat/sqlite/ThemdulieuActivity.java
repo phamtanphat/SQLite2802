@@ -1,5 +1,6 @@
 package khoapham.ptp.phamtanphat.sqlite;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -39,7 +40,8 @@ public class ThemdulieuActivity extends AppCompatActivity {
                 String diachi = edtDiachi.getText().toString();
                 if (!TextUtils.isEmpty(ten) && !TextUtils.isEmpty(gia) && !TextUtils.isEmpty(diachi)){
                     String insertData = "INSERT INTO Monan VALUES (null,'"+ten.trim()+"','"+diachi.trim()+"',"+Integer.parseInt(gia)+")";
-
+                    MainActivity.sqLite.Querydata(insertData);
+                    finish();
                 }
             }
         });
