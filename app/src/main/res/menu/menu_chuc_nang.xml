@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:icon="@drawable/ic_menu"
-        android:title="Setting"
-        android:id="@+id/itemsetting"
-        app:showAsAction="collapseActionView">
+        android:title="Thêm"
+        android:id="@+id/itemThem"
+        app:showAsAction="always">
     </item>
-
 </menu>

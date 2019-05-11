@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThemdulieuActivity">
+
+    <TextView
+        android:id="@+id/textviewTieude"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="true"
+        android:textColor="#f20"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        android:text="Thêm món ăn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/textviewTieude"
+        android:hint="Tên món ăn"
+        android:id="@+id/edittextTenmonan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/edittextTenmonan"
+        android:hint="Gia món ăn"
+        android:id="@+id/edittextGiamonan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/edittextGiamonan"
+        android:hint="Địa chỉ"
+        android:id="@+id/edittextDiachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Hủy"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/edittextDiachi"
+        android:id="@+id/buttonHuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Xác nhận"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/edittextDiachi"
+        android:id="@+id/buttonXacnhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,9 +1,12 @@
 package khoapham.ptp.phamtanphat.sqlite;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -54,5 +57,21 @@ public class MainActivity extends AppCompatActivity {
         }
         monanAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_chuc_nang,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.itemThem :
+                Intent intent = new Intent(MainActivity.this , ThemdulieuActivity.class);
+                startActivity(intent);
+        }
+        return true;
     }
 }
